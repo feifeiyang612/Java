@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 数据库驱动-->
+    <!-- http://www.mybatis.org/generator/configreference/table.html -->
+    <!-- <classPathEntry location="src/main/resources/postgre/postgresql-9.2-1003-jdbc4.jar"/> -->
+    <!--修改targetRuntime="MyBatis3"-->
+    <context id="tables" targetRuntime="MyBatis3" >
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库链接URL，用户名、密码 -->
+        <connectionFactory>
+        	<!-- <property name="driverClass" value="org.postgresql.Driver"/>
+        	<property name="connectionURL" value="jdbc:postgresql://172.21.12.28:5432/equipment_diagnosis"/>
+        	<property name="userId" value="admin"/>
+        	<property name="password" value="123456"/> -->
+        	<property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+        	<property name="connectionURL" value="jdbc:mysql://172.21.32.31:3307/target"/>
+        	<property name="userId" value="target"/>
+        	<property name="password" value="XwNPfI0sk1FKnKFh"/>
+        </connectionFactory>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+            <property name="useJSR310Types" value="true"/>
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置-->
+        <javaModelGenerator targetPackage="com.hollysys.smartfactory.target.calculate.model.orm" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+            <property name="useActualColumnNames" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="orm" targetProject="src/main/resources/mapper">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置   type="XMLMAPPER"-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.hollysys.smartfactory.target.calculate.dao.mapper.orm"  targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 要生成哪些表-->
+        <!--<table tableName="device_shutdown" domainObjectName="DeviceShutdown" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false"></table>-->
+        <table tableName="power_index_item" domainObjectName="IndexItem" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"></table>
+    </context>
+</generatorConfiguration>
