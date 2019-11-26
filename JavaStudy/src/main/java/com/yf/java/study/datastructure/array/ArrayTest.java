@@ -1,8 +1,8 @@
-package com.yf.java.study.array;
+package com.yf.java.study.datastructure.array;
 
 /**
  * @Author: YangFei
- * @Description: 数组Array测试
+ * @Description: 数据结构之【数组Array】
  * @create: 2019-11-25 23:46
  */
 public class ArrayTest {
