@@ -14,15 +14,15 @@ public class MyArrayTest {
         array.add(2);
         array.add(3);
         array.add(4);
-//        //显示数组元素
-//        array.display();
-//        //根据下标为0的元素
-//        int i = array.get(0);
-//        System.out.println(i);
-//        //删除4的元素
-//        array.delete(4);
-//        //将元素3修改为33
-//        array.modify(3, 33);
-//        array.display();
+        //显示数组元素
+        array.display();
+        //根据下标为0的元素
+        int i = array.get(0);
+        System.out.println(i);
+        //删除4的元素
+        array.delete(4);
+        //将元素3修改为33
+        array.modify(3, 33);
+        array.display();
     }
 }

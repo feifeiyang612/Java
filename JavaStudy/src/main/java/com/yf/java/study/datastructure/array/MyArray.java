@@ -1,5 +1,7 @@
 package com.yf.java.study.datastructure.array;
 
+import java.util.ArrayList;
+
 /**
  * @Author: YangFei
  * @Description: 用类封装数组实现数据结构
@@ -48,7 +50,7 @@ public class MyArray {
      * 添加元素
      *
      * @param value,假设操作人是不会添加重复元素的，如果有重复元素对于后面的操作都会有影响。
-     * @return添加成功返回true,添加的元素超过范围了返回false
+     * @return 添加成功返回true, 添加的元素超过范围了返回false
      */
     public boolean add(int value) {
         if (elems == length) {
@@ -64,7 +66,7 @@ public class MyArray {
      * 根据下标获取元素
      *
      * @param i
-     * @return查找下标值在数组下标有效范围内，返回下标所表示的元素 查找下标超出数组下标有效值，提示访问下标越界
+     * @return 查找下标值在数组下标有效范围内，返回下标所表示的元素 查找下标超出数组下标有效值，提示访问下标越界
      */
     public int get(int i) {
         if (i < 0 || i > elems) {
@@ -77,7 +79,7 @@ public class MyArray {
      * 查找元素是否存在，返回元素下标
      *
      * @param searchValue
-     * @return查找的元素如果存在则返回下标值，如果不存在，返回 -1
+     * @return 查找的元素如果存在则返回下标值，如果不存在，返回 -1
      */
     public int find(int searchValue) {
         int i;
@@ -104,11 +106,21 @@ public class MyArray {
             return false;
         } else {
             if (k == elems - 1) {
+                int [] newArray = new int[elems - 1];
+                for (int j = 0; j < elems - 1; j++) {
+                    newArray[j] = intArray[j];
+                }
+                intArray = newArray;
                 elems--;
             } else {
-                for (int i = k; i < elems - 1; i++) {
-                    intArray[i] = intArray[i + 1];
+                int [] newArray = new int[elems - 1];
+                for (int j = 0; j < k; j++) {
+                    newArray[j] = intArray[j];
                 }
+                for (int i = k; i < elems - 1; i++) {
+                    newArray[i] = intArray[i + 1];
+                }
+                intArray = newArray;
                 elems--;
             }
             return true;
