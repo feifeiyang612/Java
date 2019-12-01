@@ -2,7 +2,7 @@ package com.yf.java.study.datastructure.array.sort_algorithm;
 
 /**
  * @Author: YangFei
- * @Description:
+ * @Description: 冒泡法排序
  * @create: 2019-11-27 16:50
  */
 public class BubbleSort {
