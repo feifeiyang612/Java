@@ -27,13 +27,11 @@ public class BubbleSort {
             if (flag) {
                 break;
             }
-            //第 i轮排序的结果为
-            System.out.print("第" + i + "轮排序后的结果为:");
+            //第i轮排序的结果为
+            System.out.print("第" + i + "轮排序后的结果为:" + "flag = " + flag + " ");
             display(array);
-
         }
         return array;
-
     }
 
     //遍历显示数组
@@ -46,6 +44,7 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         int[] array = {4, 2, 8, 9, 5, 7, 6, 1, 3};
+//        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         //未排序数组顺序为
         System.out.println("未排序数组顺序为：");
         display(array);
