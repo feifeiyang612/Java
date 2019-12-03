@@ -23,7 +23,7 @@ public class ChoiceSort {
                 array[i] = array[min];
                 array[min] = temp;
             }
-            //第 i轮排序的结果为
+            //第i轮排序的结果为
             System.out.print("第" + (i + 1) + "轮排序后的结果为:");
             display(array);
         }

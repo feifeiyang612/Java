@@ -43,8 +43,8 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        int[] array = {4, 2, 8, 9, 5, 7, 6, 1, 3};
-//        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+//        int[] array = {4, 2, 8, 9, 5, 7, 6, 1, 3};
+        int[] array = {1, 2, 3, 5, 4, 6, 7, 8, 9};
         //未排序数组顺序为
         System.out.println("未排序数组顺序为：");
         display(array);
