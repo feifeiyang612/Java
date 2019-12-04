@@ -1,17 +1,18 @@
 package com.yf.java.study.datastructure.stack.stack_2;
 
 import java.util.Arrays;
+import java.util.EmptyStackException;
 
 /**
  * @Author: YangFei
- * @Description:
+ * @Description: 增强功能版栈
  * @create: 2019-12-03 23:52
  */
 public class ArrayStack {
 
     //存储元素的数组，声明为Object类型能存储任意类型的数据
     private Object[] elementData;
-    //指向栈顶的指征
+    //指向栈顶的指针
     private int top;
     //栈的总容量
     private int size;
@@ -23,14 +24,57 @@ public class ArrayStack {
         this.size = 10;
     }
 
+    public ArrayStack(int initialCapacity) {
+        if (initialCapacity < 0) {
+            throw new IllegalArgumentException("栈初始容量不能小于0: " + initialCapacity);
+        }
+        this.elementData = new Object[initialCapacity];
+        this.top = -1;
+        this.size = initialCapacity;
+
+    }
+
     //压入元素
     public Object push(Object item) {
         //是否需要扩容
-        isGrow(top++);
+        isGrow(top + 1);
         elementData[++top] = item;
         return item;
     }
 
+    //弹出栈顶元素
+    public Object pop() {
+        Object obj = peek();
+        remove(top);
+        return obj;
+    }
+
+    //获取栈顶元素
+    public Object peek() {
+        if (top == -1) {
+            throw new EmptyStackException();
+        }
+        return elementData[top];
+    }
+
+    //判断栈是否为空
+    public boolean isEmpty() {
+        return (top == -1);
+    }
+
+    //删除栈顶元素
+    public void remove(int top) {
+        //栈顶元素位置为null
+        elementData[top] = null;
+        this.top--;
+    }
+
+    /**
+     * 是否需要扩容，如果需要，则扩大一倍并返回true，不需要则返回false
+     *
+     * @param minCapacity
+     * @return
+     */
     private boolean isGrow(int minCapacity) {
         int oldCapacity = this.size;
         //如果当前元素压入栈之后总容量大于前面定义的容量，则需要扩容
