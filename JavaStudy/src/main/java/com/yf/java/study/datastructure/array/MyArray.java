@@ -79,7 +79,7 @@ public class MyArray {
      * 查找元素是否存在，返回元素下标
      *
      * @param searchValue
-     * @return 查找的元素如果存在则返回下标值，如果不存在，返回 -1
+     * @return 查找的元素如果存在则返回下标值，如果不存在，则返回 -1
      */
     public int find(int searchValue) {
         int i;
