@@ -1,4 +1,6 @@
-package com.yf.java.study.datastructure.queue;
+package com.yf.java.study.datastructure.queue.unidirectional_queue;
+
+import com.yf.java.study.datastructure.queue.unidirectional_queue.MyQueue;
 
 /**
  * @Author: YangFei

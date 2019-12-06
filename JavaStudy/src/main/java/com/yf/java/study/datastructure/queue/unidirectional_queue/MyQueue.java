@@ -1,4 +1,4 @@
-package com.yf.java.study.datastructure.queue;
+package com.yf.java.study.datastructure.queue.unidirectional_queue;
 
 /**
  * @Author: YangFei
@@ -8,7 +8,6 @@ package com.yf.java.study.datastructure.queue;
 public class MyQueue {
 
     private Object[] queArray;
-
     //队列总大小
     private int maxSize;
     //队列前端
