@@ -27,15 +27,16 @@ public class OrderLinkedList {
 
         Node node = new Node(value);
         Node pre = null;
+        //对象赋值，head和current指向内存堆中同一个对象
         Node current = head;
         while (current != null && value > current.data) {
+            //对象赋值，current和pre指向内存堆中同一个对象
             pre = current;
             current = current.next;
         }
         if (pre == null) {
             head = node;
             head.next = current;
-
         } else {
             pre.next = node;
             node.next = current;
