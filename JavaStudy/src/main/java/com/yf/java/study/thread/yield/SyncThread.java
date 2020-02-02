@@ -28,17 +28,20 @@ public class SyncThread implements Runnable {
     /**
      * 对这个类的实例化对象进行检查
      */
-    private synchronized void doOtherthing() {
-        NOWVALUE = this.value;
-        LOGGER.info("当前NOWVALUE的值：" + NOWVALUE);
-    }
-
-//    private void doOtherthing() {
-//        synchronized (SyncThread.class) {
-//            NOWVALUE = this.value;
-//            LOGGER.info("当前NOWVALUE的值：" + NOWVALUE);
-//        }
+//    private synchronized void doOtherthing() {
+//        NOWVALUE = this.value;
+//        LOGGER.info("当前NOWVALUE的值：" + NOWVALUE);
 //    }
+
+    /**
+     * 进行SyncThread类的多个实例对象进行同步检查,需要对SyncThread类的class对象进行同步检查
+     */
+    private void doOtherthing() {
+        synchronized (SyncThread.class) {
+            NOWVALUE = this.value;
+            LOGGER.info("当前NOWVALUE的值：" + NOWVALUE);
+        }
+    }
 
     @Override
     public void run() {
