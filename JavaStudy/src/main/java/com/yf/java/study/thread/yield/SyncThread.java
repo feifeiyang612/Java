@@ -1,14 +1,12 @@
 package com.yf.java.study.thread.yield;
 
-import com.yf.java.study.thread.lock.ThreadLock;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.log4j.BasicConfigurator;
-import org.omg.PortableServer.THREAD_POLICY_ID;
 
 /**
  * @Author: YangFei
- * @Description:
+ * @Description: Synchronized关键字的使用
  * @create: 2020-01-17 23:14
  */
 public class SyncThread implements Runnable {
@@ -27,6 +25,9 @@ public class SyncThread implements Runnable {
         this.value = value;
     }
 
+    /**
+     * 对这个类的实例化对象进行检查
+     */
     private synchronized void doOtherthing() {
         NOWVALUE = this.value;
         LOGGER.info("当前NOWVALUE的值：" + NOWVALUE);
@@ -47,7 +48,7 @@ public class SyncThread implements Runnable {
     }
 
     public static void main(String[] args) {
-        // 实例对象1
+        //实例对象1
         SyncThread syncThread_1 = new SyncThread(10);
         //实例对象2
         SyncThread syncThread_2 = new SyncThread(100);
